@@ -8,6 +8,7 @@ https://github.com/user-attachments/assets/129a14d2-ed73-470f-9a4c-2240b2a4885c
 
 - `src/talk_to_figma_mcp/` - TypeScript MCP server for Figma integration from client-end
 - `src/cursor_mcp_plugin/` - Figma plugin for communicating with Cursor/Claude Desktop through the MCP server
+- `src/tools/` - All available tool definitions and associated functions
 - `src/socket.ts` - WebSocket server that facilitates communication between the MCP server and Figma plugin
 
 ## Capabilities
@@ -96,15 +97,27 @@ Ensure that you have the Cursor/Claude Desktop client application and the Figma 
 
 ## Development
 
-### Building the Figma Plugin
+### Editing Existing Tools
 
-1. Navigate to the Figma plugin directory:
+Navigate to the directory of the tool you wish to update and edit the `plugin.js` file to change the operation of the tool. If there are any changes to the tool definition, such as descriptions, input parameters, return formats, etc. then modify `index.ts` with any necessary updates.
+
+### Building New Tools
+
+1. Navigate to the tools directory:
 
    ```
-   cd src/cursor_mcp_plugin
+   cd src/tools
    ```
 
-2. Edit code.js and ui.html
+2. Create a new directory with the tool name and add an `index.ts` and `plugin.js` file.
+
+3. Define the tool parameters and any return format in `index.ts`.
+
+4. Program the tool's functions and commands in `plugin.js`.
+
+5. Import the new tool into the index files - `mcp-defs.ts` and `plugin-handlers.js`.
+
+6. Upon restarting the server and the client, the new tool should be visible.
 
 ## Best Practices
 

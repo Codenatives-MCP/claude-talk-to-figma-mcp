@@ -1,7 +1,7 @@
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { connectToFigma } from "../tools/utils/websocket.js";
-import * as toolsModule from "../tools/index.js";
+import * as toolsModule from "../tools/mcp-defs.js";
 
 // Create MCP server
 const server = new McpServer({
