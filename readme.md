@@ -66,9 +66,11 @@ Ensure that you have the Cursor/Claude Desktop client application and the Figma 
     }
     ```
     - The config file on Windows will be the same except that the filepath should have double backward slashes so that it is correctly interpreted by the Windows shell.
+
 5. Connect the Figma plugin from the desktop app:
     - On a Figma file, go to the top-left icon > Plugins > Development > Import plugin from manifest.
     - Select `src/cursor_mcp_plugin/manifest.json` from the repository directory.
+
 6. Check if the MCP tools are available in Cursor Settings/Claude chat, which may involve restarting the client (it's OK for now if there is an error showing that "Client is closed" or "Disconnected/Failed" as the WebSocket server has not yet started). If they are present, you have successfully connected the client to the MCP server.
 
 <small>**\*** If you are using Cursor, you can skip these steps by running `bun setup` or `./scripts/setup.sh` in the repository directory. However, the MCP server access will be limited to that directory when opened by Cursor.</small> 
@@ -83,7 +85,7 @@ Ensure that you have the Cursor/Claude Desktop client application and the Figma 
 
 1. Run ```bun start``` or ```bun run src/socket.ts``` from the repository directory to activate the WebSocket server.
 2. Ensure that Cursor/Claude Desktop is connected to the MCP server. At this point, it should be showing that it has successfully connected and all the tools are available.
-3. On the Figma file you would like to access through the client, go to the top-left icon > Plugins > Development > Manage plugins in development, and select the 'Cursor MCP Plugin' to connect to the WebSocket server.
+3. On the Figma file you would like to access, go to the top-left icon > Plugins > Development > Manage plugins in development, and select the 'Cursor MCP Plugin' to connect to the WebSocket server.
 4.  Include the channel name from the Figma plugin window in the prompt for the client agent. Eg. "Talk to Figma using channel abcdef1".
 5. Describe what you want to design as a prompt to Cursor/Claude Desktop and observe the changes it makes to your Figma file.
 

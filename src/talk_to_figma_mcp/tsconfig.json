@@ -8,11 +8,11 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "outDir": "dist",
-    "rootDir": ".",
     "declaration": true,
     "experimentalDecorators": false,
-    "emitDecoratorMetadata": false
+    "emitDecoratorMetadata": false,
+    "rootDir": "../../"
   },
-  "include": ["./**/*.ts"],
+  "include": ["../**/*.ts"],
   "exclude": ["node_modules", "dist"]
 }
